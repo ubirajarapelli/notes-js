@@ -16,3 +16,13 @@ function jsTask() {
     .pipe(gulp.dest('build/js'))
     .pipe(notify('JS nice!'));
 };
+
+gulp.task('css', cssTask);
+
+function cssTask() {
+  return gulp
+    .src(['src/css/**/*.css'])
+    .pipe(plumber())
+    .pipe(gulp.dest('build/css'))
+    .pipe(notify('CSS nice!'));
+};
